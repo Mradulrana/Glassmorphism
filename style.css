@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+   font-family: "Montserrat," sans-serif;
+   min-height: 100vh;
+   background-image: linear-gradient(90deg, #6a11cb, #2575fc, #6a11cb);
+   background-position: center;
+   background-size: 300%;
+   transition: background 0.5s;
+  animation: bg-animation 10s infinite;
+}
+
+/* Container start */
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 20px 190px;
+    z-index: 999;
+}
+
+/* background animation start */
+
+@keyframes bg-animation{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+
+.whizcare,
+.whizclub,
+.whizclub-text{
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    padding: 0 10px;
+    transform:  translateX(-50%);
+}
+.whizclub-text p{
+    font-size: 5rem;
+}
+
+.whizcare{
+    display: flex;
+    max-width: 250px;
+    gap: 10px;
+    align-items: center;
+    top: 5px;
+}
+
+.whizcare img{
+    width: 100%;
+    max-width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.whizcare p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.787);
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.whizcare a{
+    text-decoration: none;
+}
+
+.whizcare p:hover{
+    color: #ccc;
+    transition: all 0.25s;
+}
+
+.whizclub{
+    bottom: 5px;
+}
+
+.whizclub-text{
+font-size: 1rem;
+font-weight: 600;
+color: #fff;
+text-align: center;
+line-height: 125%;
+padding: 10px;
+}
+
+/* card container start */
+.card-container{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ gap: 10px;
+ text-align: center;
+}
+
+.card{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 15px 30px;
+    line-height: 170%;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.card-overlay{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.6s;
+    will-change: transform;
+    z-index: 99;
+}
+
+.card:hover .card-overlay{
+    transform: scale(0.5) translateX(-100%);
+}
+
+.card-overlay img{
+   width: 50px;
+   filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, .5));
+}
+
+.card-heading{
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* card inner content start */
+
+.card-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.enter-link{
+    opacity: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s;
+}
+
+.enter-link:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transform:  scale(1.05s);
+}
+.card:hover ,.enter-link{
+       opacity: 1;
+}
+
+
+/* responsive media start */
+
+@media(max-width:576px){
+    .whizcare{
+        flex-direction: column;
+        gap: 10px;
+        max-width: 125px;
+    }
+    .whizclub P{
+        text-align: center;
+        font-size: 1.5rem;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    }
+}
